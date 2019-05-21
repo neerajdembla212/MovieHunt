@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import Header from './components/header/Header';
-import Styles from './App.module.scss';
+import './App.scss';
 
 function App() {
   return (
-    <div className={Styles.App}>
+    <div className='App'>
       <Header />
       <p>Hey</p>
       <h1>Hey</h1>

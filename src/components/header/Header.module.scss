@@ -4,4 +4,72 @@
     background: $secondary-background-color;
     height: 90px;
     box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.29);
+    display: flex;
+
+    .leftMenu {
+        width: 30vw;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .icMenu {
+        height: 24px;
+        width: 24px;
+        align-self: center;
+    }
+
+    .logo {
+        width: 165px;
+        align-self: center;
+        display: flex;
+    }
+
+    .TabContainer {
+        display: flex;
+        width: 50vw;
+        justify-content: space-around;
+        height: 100%;
+
+        .Tab {
+            cursor: pointer;
+
+            .TabLink {
+                font-size: 20px;
+                align-self: center;
+                text-decoration: none;
+                color: $primary-text-color;
+                line-height: 90px;
+
+            }
+
+            &:hover {
+                font-weight: 600;
+                border-bottom: 3px solid $secondary;
+            }
+        }
+    }
+
+    .Divider {
+        align-self: center;
+        height: 80%;
+        background-color: $secondary;
+
+        .VerticleDivider {
+            width: 1px;
+        }
+    }
+
+    .LoginContainer {
+        display: flex;
+        width: 19vw;
+        justify-content: space-around;
+
+        .LoginItem {
+            align-self: center;
+            width: 100px;
+            height: 35px;
+            line-height: 35px;
+            cursor: pointer;
+        }
+    }
 }

@@ -1,0 +1,17 @@
+/* This file contains App component's styles as well as all the common styles of Application, That's the reason this file is not a css module */
+@import './variables.scss';
+
+.App {
+    text-align: center;
+    color: $secondary-text-color
+}
+
+body {
+    background-color: $primary-background-color;
+}
+
+.RoundBtn {
+    background-color: $primary;
+    border-radius: 100px;
+    color: $secondary;
+}
