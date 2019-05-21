@@ -1,0 +1,7 @@
+@import '../../variables.scss';
+
+.Header {
+    background: $secondary-background-color;
+    height: 90px;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.29);
+}
