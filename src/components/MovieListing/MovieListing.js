@@ -7,13 +7,18 @@ import * as Utils from '../../utils/Utils';
 import Movie from './Movie/Movie';
 import Classes from './MovieListing.module.scss';
 import Notification from '../UI/Notification/Notification';
+import MovieErrorBoundary from './MovieErrorBoundary/MovieErrorBoundary';
+
 const MovieListing = props => {
     useEffect(() => {
         props.fetchMovies();
     }, [])
-    console.log('movues ', props.movies);
     const moviesGrid = props.movies && props.movies.map(movie => {
-        return <Movie key={Utils.generateID()} {...movie} />
+        return (
+            <MovieErrorBoundary>
+                <Movie key={Utils.generateID()} {...movie} />
+            </MovieErrorBoundary>
+        )
     });
     return (
         <>

@@ -6,8 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store';
-
 import WebFont from 'webfontloader';
+import AppErrorBoundary from './components/AppErrorBoundary/AppErrorBoundary';
 
 WebFont.load({
     google: {
@@ -18,7 +18,9 @@ WebFont.load({
 ReactDOM.render(
     <Provider store={configureStore()}>
         <BrowserRouter>
-            <App />
+            <AppErrorBoundary>
+                <App />
+            </AppErrorBoundary>
         </BrowserRouter>
     </Provider>
     , document.getElementById('root'));
