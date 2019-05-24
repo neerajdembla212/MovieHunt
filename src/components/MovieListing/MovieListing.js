@@ -6,7 +6,7 @@ import Image from '../UI/Image/Image';
 import * as Utils from '../../utils/Utils';
 import Movie from './Movie/Movie';
 import Classes from './MovieListing.module.scss';
-
+import Notification from '../UI/Notification/Notification';
 const MovieListing = props => {
     useEffect(() => {
         props.fetchMovies();
@@ -20,12 +20,15 @@ const MovieListing = props => {
             <div className={Classes.grid}>
                 {moviesGrid}
             </div>
+            <Notification type={props.notification} message={props.message} />
         </>
     )
 }
 
 const mapStateToProps = state => ({
-    movies: state.movieListing.movies
+    movies: state.movieListing.movies,
+    notification: state.movieListing.notification,
+    message: state.movieListing.message
 });
 const mapDispatchToProps = dispatch => ({
     fetchMovies: () => dispatch(actionCreators.fetchMovies()),

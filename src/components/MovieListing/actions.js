@@ -3,15 +3,18 @@ import { apiRequest } from '../../utils/ApiGateway';
 import { Constants } from '../../utils/Constants';
 
 export const fetchMovies = () => dispatch => {
+    const successMessage = 'Results fetch successful';
     dispatch(fetchMoviesBegin());
     apiRequest({
         url: 'discover/movie?api_key=4bb955e6aae237838a1240436707d121&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
     }).then(res => {
         if (Constants.SUCCESS_HTTP_CODES.indexOf(res.status) > -1) {
-            dispatch(fetchMoviesSuccess(res.data.results));
+            dispatch(fetchMoviesSuccess(res.data.results, successMessage));
+        } else {
+            dispatch(fetchMoviesFailure());
         }
-    }).catch(res => {
-
+    }).catch(err => {
+        dispatch(fetchMoviesFailure(err.message))
     })
 }
 
@@ -21,10 +24,13 @@ function fetchMoviesBegin() {
     }
 }
 
-function fetchMoviesSuccess(movies) {
+function fetchMoviesSuccess(movies, successMessage) {
     return {
         type: actionConstants.FETCH_MOVIES_SUCCESS,
-        payload: movies
+        payload: {
+            movies,
+            message: successMessage
+        }
     }
 }
 
