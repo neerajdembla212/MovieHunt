@@ -11,12 +11,13 @@ const MovieListing = props => {
     useEffect(() => {
         props.fetchMovies();
     }, [])
+    console.log('movues ', props.movies);
     const moviesGrid = props.movies && props.movies.map(movie => {
         return <Movie key={Utils.generateID()} {...movie} />
     });
     return (
         <>
-            <Typography>Top Rated Movies</Typography>
+            <Typography className={Classes.Title}>Top Rated Movies</Typography>
             <div className={Classes.grid}>
                 {moviesGrid}
             </div>

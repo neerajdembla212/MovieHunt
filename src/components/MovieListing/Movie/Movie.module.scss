@@ -41,11 +41,16 @@
 
             .Title {
                 display: flex;
+                justify-content: space-between;
 
                 .Popularity {
                     color: $text-highlight-color;
                     font-size: 12px;
                 }
+            }
+
+            .DateText {
+                margin-bottom: 0;
             }
         }
     }

@@ -23,10 +23,10 @@ function fetchMoviesBegin(state) {
 function fetchMoviesSuccess(state, action) {
     return {
         ...state,
-        movies: action.payload,
+        movies: action.payload.movies,
         moviesFetching: false,
         notification: 'success',
-        message: action.message
+        message: action.payload.message
     }
 }
 function fetchMoviesFailure(state, action) {

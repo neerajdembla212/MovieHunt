@@ -15,7 +15,8 @@ const Style = {
     },
     title: {
         fontSize: '24px',
-        color: '#ffffff'
+        color: '#ffffff',
+        margin: 0
     },
     popularity: {
         whiteSpace: 'nowrap',
@@ -37,7 +38,7 @@ const Movie = props => {
                         <Typography style={Style.title}>{props.title}</Typography>
                         <Typography style={Style.popularity} className={Classes.Popularity}>{popularity}%</Typography>
                     </div>
-                    <Typography>{Utils.formatDate(props.release_date)}</Typography>
+                    <Typography className={Classes.DateText}>{Utils.formatDate(props.release_date)}</Typography>
                     <Typography style={Style.description}>{props.overview}</Typography>
                 </div>
             </div>

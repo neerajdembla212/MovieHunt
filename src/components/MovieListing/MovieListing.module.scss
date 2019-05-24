@@ -1,5 +1,14 @@
+@import '../../variables.scss';
+
 .grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 0 10px;
+}
+
+.Title {
+    font-size: 32px;
+    color: $primary-text-color;
+    margin: 15px;
 }
