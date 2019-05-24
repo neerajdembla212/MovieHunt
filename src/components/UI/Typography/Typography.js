@@ -3,7 +3,7 @@ const cn = require('classnames');
 
 const Typography = props => {
 
-    const classes = cn('Typography');
+    const classes = cn('Typography', props.className);
     if (props.condition === false || !props.children) {
         return <p className={classes} style={props.style} >NA</p>;
     }

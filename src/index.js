@@ -7,6 +7,14 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store';
 
+import WebFont from 'webfontloader';
+
+WebFont.load({
+    google: {
+        families: ['Roboto:400,500,700', 'sans-serif']
+    }
+});
+
 ReactDOM.render(
     <Provider store={configureStore()}>
         <BrowserRouter>

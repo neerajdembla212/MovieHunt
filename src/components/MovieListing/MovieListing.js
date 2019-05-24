@@ -2,18 +2,24 @@ import React, { useEffect } from 'react';
 import Typography from '../UI/Typography/Typography';
 import { connect } from 'react-redux';
 import * as actionCreators from './actions';
+import Image from '../UI/Image/Image';
+import * as Utils from '../../utils/Utils';
+import Movie from './Movie/Movie';
+import Classes from './MovieListing.module.scss';
 
 const MovieListing = props => {
     useEffect(() => {
         props.fetchMovies();
     }, [])
     const moviesGrid = props.movies && props.movies.map(movie => {
-        return <img src={`https://image.tmdb.org/t/p/w500_and_h282_face${movie.poster_path}`} />
+        return <Movie key={Utils.generateID()} {...movie} />
     });
     return (
         <>
             <Typography>Top Rated Movies</Typography>
-            {moviesGrid}
+            <div className={Classes.grid}>
+                {moviesGrid}
+            </div>
         </>
     )
 }
