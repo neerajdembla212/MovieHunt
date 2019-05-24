@@ -20,13 +20,13 @@ const Header = (props) => {
             </div>
             <div className={Styles.TabContainer}>
                 <div className={Styles.Tab}>
-                    <Link className={Styles.TabLink}>Top Rated</Link>
+                    <Link to="/" className={Styles.TabLink}>Top Rated</Link>
                 </div>
                 <div className={Styles.Tab}>
                     <Link to="/movies" className={Styles.TabLink}>Movies</Link>
                 </div>
                 <div className={Styles.Tab}>
-                    <Link className={Styles.TabLink}>Discover</Link>
+                    <Link to="/" className={Styles.TabLink}>Discover</Link>
                 </div>
             </div>
             <div className={Styles.Divider}>
