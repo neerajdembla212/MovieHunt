@@ -7,7 +7,6 @@ const Router = props => {
     return (
         <Switch>
             <RouterHOC path="/movies" componentPath="./components/MovieListing/MovieListing" />
-            {/* <Route path="/movies" component={MovieListing} /> */}
         </Switch>
     )
 }

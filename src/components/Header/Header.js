@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Styles from './Header.module.scss';
 import hamburger from '../../assets/img/hamburger.png';
 import path from '../../assets/img/Path.png';
 import Logo from '../../assets/img/MovieHunt.png';
 import { Link } from 'react-router-dom';
+import ReactModal from '../UI/Modal/Modal';
+
 const cn = require('classnames');
 
 const Header = (props) => {
+    const [showModal, updateShowModal] = useState(false)
     return (
         <div className={Styles.Header}>
             <div className={Styles.leftMenu}>
@@ -33,13 +36,16 @@ const Header = (props) => {
                 <div className={Styles.VerticleDivider}></div>
             </div>
             <div className={Styles.LoginContainer}>
-                <div className={Styles.LoginItem}>
+                <div className={Styles.LoginItem} onClick={updateShowModal.bind({}, true)}>
                     Login
                 </div>
                 <div className={cn(Styles.LoginItem, 'RoundBtn')}>
                     Sign Up
                 </div>
             </div>
+            <ReactModal open={showModal} onClose={updateShowModal.bind({}, false)}>
+                <p>Modal </p>
+            </ReactModal>
         </div>
     )
 }
