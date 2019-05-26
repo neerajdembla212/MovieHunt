@@ -6,7 +6,7 @@ export const fetchMovies = () => dispatch => {
     const successMessage = 'Results fetch successful';
     dispatch(fetchMoviesBegin());
     apiRequest({
-        url: 'discover/movie?api_key=4bb955e6aae237838a1240436707d121&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
+        url: `discover/movie?api_key=${Constants.MOVIE_DB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
     }).then(res => {
         if (Constants.SUCCESS_HTTP_CODES.indexOf(res.status) > -1) {
             dispatch(fetchMoviesSuccess(res.data.results, successMessage));
